@@ -1,126 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script>
-            home_button = document.getElementById("home_button");
-            new_table_button = document.getElementById("new_table_button");
-            table_delete_button = document.getElementById("delete_table_button");
-
-            home_sec = document.getElementsByClassName("Home_section");
-            nt_sec = document.getElementsByClassName("New_Table_section");
-            dt_sec = document.getElementsByClassName("Delete_Table_section");
-
-            home_section = document.querySelector(".Home_section");
-            window.onload = function(){
-                const home_button = document.getElementById("home_button");
-                
-                home_button.focus();
-                home_sec[0].classList.remove("hide");
-                nt_sec[0].classList.add("hide");
-                dt_sec[0].classList.add("hide");
-            }
-
-            function hideSec1(){
-                home_sec[0].classList.remove("hide");
-                nt_sec[0].classList.add("hide");
-                dt_sec[0].classList.add("hide");
-            }
-
-            function hideSec2(){
-                home_sec[0].classList.add("hide");
-                nt_sec[0].classList.remove("hide");
-                dt_sec[0].classList.add("hide");
-            }
-
-            function hideSec3(){
-                home_sec[0].classList.add("hide");
-                nt_sec[0].classList.add("hide");
-                dt_sec[0].classList.remove("hide");
-            };
-
-        </script>
-        <style>
-            body{
-                background-color: #f9a03f;
-            }
-
-            .menu{
-                display: block;
-                background-color: grey;
-                height: 55px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .menu_button{
-                transition: 0.7s;
-                display: inline-block;
-                height: 95%;
-                width: 100%;
-                background-color: grey;
-                border: 0px;             
-                margin-right:1px;
-                margin-left:1px;
-                border-radius: 10px;
-                border-bottom: 0px;
-            }
-            .menu_button:hover{
-                transition: 0.7s;
-                background-color: #32292F;
-                color: #D8DCFF;
-            }
-            .menu_button:focus{
-                transition: 0.7s;
-                background-color: #D8DCFF;
-                border: 2px solid black;
-                color: #32292F;
-            }
-            .hide{
-                display: none;
-            }
-            .nt-secs{
-                display: block;
-                border: 2px solid black;
-                border-radius: 10px;
-                margin: 5px;
-                padding: 5px;
-                display: flex;
-                flex-direction: column;
-            }
-            .nt-inputs{
-                height: 28px;
-                width: 40%;
-                border-color: #E9F7CA;
-                border-width: 3px;
-                border-style: solid;
-                border-radius: 12px;
-                transition: 0.5s;
-            }
-            .nt-inputs:hover{
-                border-color: #32292F;
-                background-color: #E9F7CA;
-                box-shadow: 0px 0px 10px black;
-                transform:translateX(3px);
-                transition: 0.5s;
-            }
-            #add_participant_button{
-                height: 36px;
-                width: 36px;
-                justify-content: center;
-                align-items: center;
-                padding: 0px;
-                border-radius: 50%;
-                background-color: White;
-                border: 2px solid #E9F7CA;
-                transition: 0.5s;
-            }
-            #add_participant_button:hover{
-                background-color: #E9F7CA;
-                box-shadow: 0px 0px 10px black;
-                transition: 0.5s;
-            }
-        </style>
-    </head>
+        <link rel="stylesheet" href="Style.css">
+        <script src="Script.Js"></script>
     <body>
         <!-- This is the main page of the application -->
         <div class="menu">
@@ -152,14 +34,21 @@
                 <div class="nt-secs" id="washers">
                     <h3>How many randoms per Day ?</h3>
                     <form>
-                        <input type="number" class="nt-inputs" id="randoms_per_day" name="randoms_per_day" placeholder="Randoms per Day" min="1" max="100">
+                        <input type="number" class="nt-inputs" id="randoms_per_day" name="randoms_per_day" placeholder="Randoms per Day" min="1" max="10">
                     </form>
-                    <h3>Enter all participants:</h3>
-                    <form>
-                        <button type="button" id="add_participant_button">Add</button>
-                        <input type="text" class="nt-inputs" id="participant_name" name="participant_name" placeholder="Enter participant name">
-                    </form>
+                        <h3>Enter all participants:</h3>
+                        <form class="dform">
+                            <div class="idk">
+                                <button type="button" id="add_participant_button" onclick="addParticipant()">Add</button>
+                            </div>
+                            <div id="part_list_input">    
+                                <input type="text" class="nt-inputs" id="participant_name" name="participant_name" placeholder="Enter participant name">
+                                <button type="button" class="remove_bttn" id="remove_participant_button" onclick="removeParticipant(this)" style="margin-left: 0px;">-</button>
+                            </div>
+                        </form>
                 </div>
+                <button type="button" class="nt-inputs" id="save_data" onclick="store_info()">Create</button>
+                <button class="nt-inputs" id="clear_data" onclick="createTable()">Reset</button>
             </div>
 
             <!--This is the table deletion section-->
