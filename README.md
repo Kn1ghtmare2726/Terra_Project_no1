@@ -1,4 +1,3 @@
-This project is currently not yet finished, though I have made considerable progress.
-  The main goal is to create a website to use and quickly settle arguements with pure RNG, the project is based on one of my first projects 
-my first websites that I used to randomise the dish schedule because my sister and I kept arguing. However this Project 
-is more dymnamic so It can be used for more people, more periods of time and more futile arguements.
+Note: This project is currently not yet finished.
+  The main goal is to create a website to use and quickly settle arguements with pure RNG, the project is based on one of my first projects my first websites that I used to randomise the dish schedule because my sister and I kept arguing. However this Project is more dymnamic so It can be used for more people, more periods of time and more futile arguements.
+  To make a new RNG Chart you must first click the "new table" chart after which it will ask you a series of Questions about the details. The program will take this info and make into a randomised chart (not yet added) 
